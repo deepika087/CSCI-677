@@ -178,7 +178,7 @@ with graph.as_default():
 
 with tf.Session(graph=graph) as session:
     tf.global_variables_initializer().run()
-    print 'Initialized with learning_rate', learning_rate
+    print('Initialized with learning_rate' + str(learning_rate))
     for step in range(num_steps):
         offset = (step * batch_size) % (train_labels.shape[0] - batch_size)
         batch_data = train_dataset[offset:(offset + batch_size), :, :, :]
@@ -191,12 +191,12 @@ with tf.Session(graph=graph) as session:
         if step % display_step == 0:
             validation_accuracy = accuracy(validation_prediction.eval(), validation_labels)
             message = "step {:04d} : loss is {:06.2f}, accuracy on training set {:02.2f} %, accuracy on vaidation set {:02.2f} %".format(step, l, train_accuracy, validation_accuracy)
-            print message
+            print(message)
 
-    print "Accuracy on test model:", accuracy(test_prediction.eval(), test_labels)
+    print("Accuracy on test model:" + str(accuracy(test_prediction.eval(), test_labels)))
     result_test_pred = test_prediction.eval()
 
-print "Confusion Matrix"
+print("Confusion Matrix")
 f = open(cifar10_folder + 'batches.meta', 'rb')
 datadict = pickle.load(f, encoding='bytes')
 f.close()
