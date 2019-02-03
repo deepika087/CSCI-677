@@ -1,0 +1,7 @@
+1.) Yoshua Bengio, Pascal Lamblin, Dan Popovici, Hugo Larochelle
+Universite´ de Montreal ´
+Montreal, ´ Quebec
+Greedy Layer-Wise Training of Deep Networks
+
+Wikipedia
+how to use backpropagation to train multilayer neural nets
